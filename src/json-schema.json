@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/horizon-dark-globals.json",
+  "title": "Horizon Dark Globals",
+  "description": "Schema for validating dark theme globals and enabling color pickers in VS Code",
+  "type": "object",
+  "additionalProperties": false,
+  "$defs": {
+    "hexColor": {
+      "type": "string",
+      "pattern": "^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$",
+      "format": "color-hex",
+      "description": "Hex color in #RRGGBB or #RRGGBBAA format"
+    },
+    "alphaHex": {
+      "type": "string",
+      "pattern": "^[0-9A-Fa-f]{2}$",
+      "description": "Alpha channel as two hex digits (00-FF)"
+    }
+  },
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "pattern": "../json-schema.json",
+      "description": "Schema for validating dark theme globals and enabling color pickers in VS Code"
+    },
+    "syntax": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "lavender": { "$ref": "#/$defs/hexColor" },
+        "cranberry": { "$ref": "#/$defs/hexColor" },
+        "turquoise": { "$ref": "#/$defs/hexColor" },
+        "apricot": { "$ref": "#/$defs/hexColor" },
+        "rosebud": { "$ref": "#/$defs/hexColor" },
+        "tacao": { "$ref": "#/$defs/hexColor" },
+        "gray": { "$ref": "#/$defs/hexColor" },
+        "black": { "$ref": "#/$defs/hexColor" },
+        "amethyst": { "$ref": "#/$defs/hexColor" },
+        "crimson": { "$ref": "#/$defs/hexColor" },
+        "elm": { "$ref": "#/$defs/hexColor" },
+        "thunderbird": { "$ref": "#/$defs/hexColor" },
+        "tango": { "$ref": "#/$defs/hexColor" },
+        "jaffa": { "$ref": "#/$defs/hexColor" }
+      },
+      "required": []
+    },
+    "ui": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "shadow": { "$ref": "#/$defs/hexColor" },
+        "border": { "$ref": "#/$defs/hexColor" },
+        "background": { "$ref": "#/$defs/hexColor" },
+        "backgroundAlt": { "$ref": "#/$defs/hexColor" },
+        "accent": { "$ref": "#/$defs/hexColor" },
+        "accentAlt": { "$ref": "#/$defs/hexColor" },
+        "secondaryAccent": { "$ref": "#/$defs/hexColor" },
+        "secondaryAccentAlt": { "$ref": "#/$defs/hexColor" },
+        "tertiaryAccent": { "$ref": "#/$defs/hexColor" },
+        "positive": { "$ref": "#/$defs/hexColor" },
+        "negative": { "$ref": "#/$defs/hexColor" },
+        "warning": { "$ref": "#/$defs/hexColor" },
+        "modified": { "$ref": "#/$defs/hexColor" },
+        "lightText": { "$ref": "#/$defs/hexColor" },
+        "darkText": { "$ref": "#/$defs/hexColor" }
+      },
+      "required": [
+        "shadow",
+        "border",
+        "background",
+        "backgroundAlt",
+        "accent",
+        "accentAlt",
+        "secondaryAccent",
+        "secondaryAccentAlt",
+        "tertiaryAccent",
+        "positive",
+        "negative",
+        "warning",
+        "modified",
+        "lightText",
+        "darkText"
+      ]
+    },
+    "ansi": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "normal": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "blue": { "$ref": "#/$defs/hexColor" },
+            "cyan": { "$ref": "#/$defs/hexColor" },
+            "green": { "$ref": "#/$defs/hexColor" },
+            "magenta": { "$ref": "#/$defs/hexColor" },
+            "red": { "$ref": "#/$defs/hexColor" },
+            "yellow": { "$ref": "#/$defs/hexColor" }
+          },
+          "required": ["blue", "cyan", "green", "magenta", "red", "yellow"]
+        },
+        "bright": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "blue": { "$ref": "#/$defs/hexColor" },
+            "cyan": { "$ref": "#/$defs/hexColor" },
+            "green": { "$ref": "#/$defs/hexColor" },
+            "magenta": { "$ref": "#/$defs/hexColor" },
+            "red": { "$ref": "#/$defs/hexColor" },
+            "yellow": { "$ref": "#/$defs/hexColor" }
+          },
+          "required": ["blue", "cyan", "green", "magenta", "red", "yellow"]
+        }
+      },
+      "required": ["normal", "bright"]
+    },
+    "alpha": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "high": { "$ref": "#/$defs/alphaHex" },
+        "highMed": { "$ref": "#/$defs/alphaHex" },
+        "med": { "$ref": "#/$defs/alphaHex" },
+        "medLow": { "$ref": "#/$defs/alphaHex" },
+        "low": { "$ref": "#/$defs/alphaHex" },
+        "none": { "$ref": "#/$defs/alphaHex" }
+      },
+      "required": ["high", "highMed", "med", "medLow", "low", "none"]
+    }
+  },
+  "required": ["syntax", "ui", "ansi", "alpha"]
+}

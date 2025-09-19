@@ -1,7 +1,8 @@
 {
+  "$schema": "../json-schema.json",
   "syntax": {
     "lavender": "#B877DB",
-    "cranberry": "#E95678",
+    "cranberry": "#FE5E78",
     "turquoise": "#25B0BC",
     "apricot": "#F09483",
     "rosebud": "#FAB795",

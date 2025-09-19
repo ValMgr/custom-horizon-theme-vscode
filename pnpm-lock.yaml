@@ -1,0 +1,24 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    devDependencies:
+      mustache:
+        specifier: ^3.0.1
+        version: 3.2.1
+
+packages:
+
+  mustache@3.2.1:
+    resolution: {integrity: sha512-RERvMFdLpaFfSRIEe632yDm5nsd0SDKn8hGmcUwswnyiE5mtdZLDybtHAz6hjJhawokF0hXvGLtx9mrQfm6FkA==}
+    engines: {npm: '>=1.4.0'}
+    hasBin: true
+
+snapshots:
+
+  mustache@3.2.1: {}
